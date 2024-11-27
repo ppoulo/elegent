@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="icon" href="./img/icon/favicon.ico" type="image/x-icon">
+
+    <link rel="shortcut icon" href="./img/icon/favicon.ico" type="image/x-icon"/>
+
+    <!-- <audio src="./images/music.mp3" id="dd" autoplay="autoplay" controls="controls" loop="loop"></audio> -->
+    <style>
+    
+
+
+body
+{
+  margin: 0;
+  padding: 0;
+ 
+  
+  /* make it look decent enough */
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+main {
+  width: calc(100% - 240px);
+  max-width: 680px;
+  margin: 100px auto;
+  z-index: 1;
+}
+h3{
+  font-size:1.5em;
+}
+p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+* {
+  scroll-behavior: smooth;
+  list-style: none;
+  
+}
+
+/* Menu code starts here */
+
+#menuToggle
+{
+  display: block;
+  /* You can also use relative/absolute here if you want to stay on the top */
+  position: fixed;
+  top: 100px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color:/* rgb(152, 152, 195) */ tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  max-width: 400px;
+  width: 20vw;
+  max-height: 100vh;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 20px;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menu li label
+{
+  cursor: pointer;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+  /* /* ------- 菜单栏加入 */
+  header{
+        list-style: none;
+        position: fixed;
+        top:0;
+        width:100%;
+        /* border-radius: 25px; */
+        z-index: 1;
+        
+         
+       }
+        .nav_bar{
+         
+          height:60px;
+          background:rgba(255, 255, 255, 0.9);
+          border-radius: 0 30px  ;
+          
+          /* list-style: none; */
+          /* margin-top: 20px; */
+          
+      }  
+       
+      .site_bar{
+          /* float:left; */
+          width:600px;
+          height: 60px;
+          
+          margin-left: 100px;
+          
+      }
+      .site_bar ul{
+          height:60px;
+          margin:0;
+          
+         
+      }
+      .site_bar ul li{
+          float:left;
+          height:60px;
+          width:100px;
+         display:block;
+         
+      
+      }
+    
+              
+      .site_bar ul li a{
+          text-align: center;
+          color:black;
+          line-height:60px;
+          height:60px;
+          text-decoration: none;
+          display:block;
+      
+          transition:  0.5s,color 0.5s;
+      }
+      
+      
+      .site_bar a:hover {
+          background:rgb(152, 152, 195);
+          color:white;
+          
+      } 
+      
+      /* /* ------- 菜单栏加入 */
+      
+      /* 下拉栏加入 */
+      
+              .drop{
+                  float:left;
+                  width:100px;
+                  height:40px;
+                  line-height:40px;
+                  text-align: center;
+                  /* 字体垂直居中 */
+              }
+              /* .drop a{
+                  color: rgb(47, 43, 43);
+              
+                  display:block;
+              } */
+             
+              .drop:hover .droplist{
+                  display:block;
+                }
+             
+      
+              .droplist{
+                  box-shadow:0 1px 2px cornflowerblue;
+                  display:none; 
+                  /* background: rgba(255, 255, 255, 0.8); */
+                  padding:0;
+                  margin:0;
+                  
+                
+              }
+              .droplist li{
+                  border-top:1px solid #a7a6a6;
+                  height:40px;
+                 
+              }
+              .droplist li a{
+                  display:block;
+                
+                  background-color:rgba(255, 255, 255, 0.8);/* 服了 为什么要droplist加一个颜色 li a 下面又要写一个 */
+              }
+              .droplist li a:hover{
+                background:rgb(152, 152, 195);
+                 color:white;
+              }
+/* ------------------下拉单2 */
+.droplist li:hover .droplist2{
+            display:block;
+        }
+        .droplist2{
+            position:relative;
+            left:100px;
+            bottom:60px;
+            background: #eae6e6;
+            box-shadow:0 1px 2px cornflowerblue;
+            display:none;
+            padding:0;
+            margin:0;
+            
+        }
+
+
+
+        /* ---------文章 头像  */
+        
+      
+        .avata img{
+          width:30%;
+          border-radius: 18px;
+          margin-left: 100px;
+         
+        }
+        h1,h2,h3{
+          color:rgb(152, 152, 195);
+        }
+        /* ---------留言板 */
+
+        .newsletter{
+    background-color: #5f5e5e;
+    margin:10px 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.newsletter p{
+    margin-bottom: 20px;
+    color:white;
+}
+.newsletter input,.newsletter button {
+   background-color: transparent    ;
+    color:white;
+    border:1px solid #ffffff;
+    padding:10px;
+    border-radius: 5px;
+}
+.newsletter input{
+    width:200px;
+    margin-right:15px;
+}
+.newsletter button{
+    width:80px;
+    cursor: pointer;
+    color:rgba(255, 255, 255, 0.8)
+}
+input::placeholder{
+    color:rgba(255, 255, 255, 0.8);
+}
+input:focus{
+    outline:none;
+    border-color:aqua;
+}
+/* ----------雪花效果 */
+/* body {
+	background-color: #a1b8ce;
+	height: 100vh;
+	display: flex;
+	overflow: hidden;
+} */
+
+
+
+/* ------------------雪花效果 */
+
+
+/* -------动画 */
+.donghua{
+           
+            position:relative;
+            
+           
+           line-height:30px ;
+           animation: mymove 15s infinite ;}
+           /* 动画命名  动画使用 */
+          @keyframes mymove{
+            from {left:0px;}
+            to{left:300px;}
+          }
+.donghua img{width:80px;
+}
+/* --------动画 */
+
+/* 图片页面 */
+.slogan{
+    background: #87d9c1;
+    color:white;
+   font-size: 20px;
+   line-height: 1.8em;
+   display: flex;
+   margin:auto;
+   
+}
+.slogan p{
+    color:white;
+   
+
+}
+
+.slogan img{
+    width:50%;
+}
+.info{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+   
+}
+.info p{
+    text-align:center;
+    line-height: 5em;
+
+}
+.product{
+   
+   font-size: 20px;
+   line-height: 1.8em;
+   padding:50px 80px 50px;
+   /* margin:25px 0; */
+   margin:25px 0 50px 0;
+   display: flex;
+
+
+  background-color: #ACACAC;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.product div{
+    width:300px;
+    text-align:center ;
+}
+.product img{
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    
+
+    border-radius: 10px;
+}
+.product h3{
+    font-size: 20px;
+    margin:20px 0;
+}
+.product p{
+    font-size: 14px;
+    line-height:1.6em;
+}
+/* ---------------  *//* 改动处 */
+.product1{
+   
+   font-size: 20px;
+   line-height: 1.8em;
+   padding:50px 80px 50px;
+   /* margin:25px 0; */
+   margin:25px 0 25px 0;
+   display: flex;
+
+
+  background-color: #ACACAC;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.product1 div{
+    width:300px;
+    text-align:center ;
+}
+.product1 img{
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    
+
+    border-radius: 10px;
+}
+.product1 h3{
+    font-size: 20px;
+    margin:20px 0;
+}
+.product1 p{
+    font-size: 14px;
+    line-height:1.6em;
+}
+/* ----------------- */
+
+
+.video{text-align: center;
+ 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+.footer{
+  margin-bottom: 30px;
+}
+.footer p{
+    
+    font-size: 16px;
+    color:white ;
+    margin:0 40px 40px 40px;
+}
+.footer{
+             
+             clear:left;
+             width:160px;
+             height:65px;
+             margin:10px 20px  ;
+             background:#C4E0E5 ;
+             transition: width 4s;
+             cursor: pointer;
+             border-radius: 10px;
+        }
+        
+
+         
+        #footer{ transition-timing-function: ease;}
+        .footer:hover {
+          width: 200px;
+          background: #4CA1AF;
+          }
+
+    </style>
+</head>
+
+<body>
+  <header>
+  <div class="nav_bar">
+   
+    <div class="site_bar">
+        <ul>
+            <li><a href="caidan.html">Intro</a></li>
+            <li><a href="person.html">Personality</a></li>
+            <li class="drop">
+              <a href="portfolio.html">Portfolio</a>
+              <ul class="droplist">
+                <li><a href="#">Product </a></li>
+                <li><a href="#">Interior</a></li>
+                <li><a href="#">Ui Design</a></li>
+                <li><a href="#">Model </a></li>
+              </ul>
+            </li>
+            <li class="drop"><a href="blog copy.html">Blog</a>
+              <ul class="droplist">
+                <li><a href="#travel"><label for="menuCheckbox" onclick="this.parentNode.click();"></label>Travel </a></li>
+               
+                <li><a href="#">Sport</a>
+                  <ul class="droplist2">
+                    <li><a href="#run"><label for="menuCheckbox" onclick="this.parentNode.click();"></label>Running</a></li>
+                    <li><a href="#ten"><label for="menuCheckbox" onclick="this.parentNode.click();"></label>tennis</a></li>
+                
+                </ul>
+                </li>
+                <li><a href="#cat"><label for="menuCheckbox" onclick="this.parentNode.click();"></label>Cat </a></li>
+                <li><a href="#lego"><label for="menuCheckbox" onclick="this.parentNode.click();"></label>Lego </a></li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</header>
+  
+   <!-- -----------------------雪花效果 -->
+   <section class="snow">
+    <div class="snowflake"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake1"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake2"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake3"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake4"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake5"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake6"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake7"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake8"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake9"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake10"><i class="fa-solid fa-snowflake"></i></div>
+    <div class="snowflake11"><i class="fa-solid fa-snowflake"></i></div>
+    <div class="snowflake12"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake13"><i class="fa-regular fa-snowflake"></i></div>
+    <div class="snowflake14"><i class="fa-regular fa-snowflake"></i></div>
+  
+  </section>
+     
+     
+  <script src="https://kit.fontawesome.com/901ba758ee.js" crossorigin="anonymous"></script><link rel="stylesheet" href="./style.css">
+
+ 
+  <!-- -----------------------雪花效果 -->
+   
+
+    <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" id="menuCheckbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+          <ul id="menu">
+            <!-- 
+            We can use a label here to close upon click (when doing same page navigation), this
+            does require a slight bit of JS.
+            -->
+            <li>
+              <a href="./blog-home-master/index.html">
+                <label for="menuCheckbox" onclick="this.parentNode.click();">Home</label>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#about">
+                <label for="menuCheckbox" onclick="this.parentNode.click();">About</label>
+              </a>
+            </li>
+            
+            <!-- These just close the menu -->
+            <!-- <li><label for="menuCheckbox"><a>Info</a></label></li> -->
+            <li>
+              <a href="#contact">
+              <label for="menuCheckbox"onclick="this.parentNode.click();">Contact</label></li>
+            </a>
+            <!-- Or just use regular URLs -->
+            <li>
+              <!-- <a href="https://erikterwan.com/" target="_blank">Show me more</a> -->
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <main>
+        <div class="h1">
+        <h1>
+          Hello<br>
+          This is my Blog.
+        </h1>
+        </div>
+        <!-- <div class="avata"> -->
+        <!-- <img src="images/avata.png" alt="头像"> -->
+
+        
+          <div class="donghua">
+             <img src="images/blog/11.png" alt="头像">
+          </div>
+
+      
+       <h2 >Top</h2>
+
+        <p>I have many things to share with you!</p>
+      
+        <!-- ---------------------- 照片 -->
+        <section class = body>
+          <div class="container">
+            <!--active 标识被点击的图片 -->
+            <div class="panel active" style="background-image:url(images/blog/qq.jpg)">
+              <h31>explore the world</h31>
+            </div>
+            <div class="panel" style="background-image:url(images/blog/5.png)" >
+              <h31> the tree</h31>
+            </div>
+            <div class="panel" style="background-image:url(images/blog/3.jpg)">
+              <h31> the autumn</h31>
+            </div>
+            <div class="panel" style="background-image:url(images/blog/4.jpg)">
+              <h31> my picture</h31>
+            </div>
+            <div class="panel" style="background-image:url(images/blog/7个人摄影/2.jpg)">
+              <h31>west lake  </h31>
+            </div>
+          </div>
+      </section>
+  
+        <!-- ------------------------  -->
+      </div><h2 id="travel"></h2>  
+      <p style="color:transparent">Programs and ideas still have some shortcomings, I'll continue to improve afterward</p>
+        <h2 >Travel</h2>
+        <section class="slogan" >
+           <img src="images/blog/travel/3.png" alt="外行星"> 
+          <div class="info">
+           
+          <p>Life is a wilderness,<br>not a track</p>
+            </div> 
+            </section>
+        
+        
+            <section class="product1"><!-- 改动处 -->
+                <div>
+                    <img src="images/blog/travel/8.png"alt="俯视图客厅全貌">
+                    <h3>My 2023trail</h3>
+                    <p>one year<br></p>
+                </div>
+        
+                <div>
+                    <img src="images/blog/travel/9.jpg"alt="设计渲染">
+                    <h3>France</h3>
+                    <p>I like it<br></p>
+                </div>
+        
+                <div>
+                    <img src="images/blog/travel/7.jpg"alt="zui喜欢一昂">
+                    <h3>Le Paillon </h3>
+                    <p>wind<br></p>
+                </div>
+            </section>
+          
+           
+          <!-- ------------------------  -->
+          <section class="product">
+            <div>
+                <img src="images/blog/travel/6.jpg"alt="俯视图客厅全貌">
+                <h3>Sanya</h3>
+                <p>family trip<br></p>
+            </div>
+    
+            <div>
+                <img src="images/blog/travel/10.png"alt="设计渲染">
+                <h3>Afterglow</h3>
+                <p>at home<br></p>
+            </div>
+    
+            <div>
+                <img src="images/blog/travel/1.jpg"alt="zui喜欢一昂">
+                <h3>Sky</h3>
+                <p>roatrip<br></p>
+            </div>
+        </section>
+        <!-- --------------  -->
+
+  
+        <!-- <p>I specialize in Preliminary Industrial Design, Modeling Material Process, Product Functional Design, Interaction Design, Web Design.</p> -->
+        <!-- <h2 id="about">About</h2> -->
+       
+      </div><h2 id="run"></h2>  
+      <p style="color:transparent">Programs and ideas still have some shortcomings, I'll continue to improve afterward</p>
+        <h3 id="contact">Running</h3>
+        <section class="slogan" >
+          <img src="images/blog/run/1.png" alt="外行星"> 
+         <div class="info">
+          
+         <p>Life is dull,<br>But Running Brings the Wind</p>
+           </div> 
+           </section>
+       
+       
+           <section class="product">
+               <div>
+                   <img src="images/blog/run/4.jpg"alt="俯视图客厅全貌">
+                   <h3>Pink shoes</h3>
+                   <p>favourite color<br></p>
+               </div>
+       
+               <div>
+                   <img src="images/blog/run/5.jpg"alt="设计渲染">
+                   <h3>New shoes!</h3>
+                   <p>break my record!<br></p>
+               </div>
+       
+               <div>
+                   <img src="images/blog/run/3.jpg"alt="zui喜欢一昂">
+                   <h3>Rainy day</h3>
+                   <p>thinking<br></p>
+               </div>
+           </section>
+       
+        
+         <!-- ------------------------  -->
+        </div><h2 id="ten"></h2>  
+        <p style="color:transparent">Programs and ideas still have some shortcomings, I'll continue to improve afterward</p>
+         <h3 id="contact">Tennis</h3>
+         <!-- <section class="slogan" > -->
+           <!-- <img src="images/portfolio/interior/6.png" alt="外行星">  -->
+          
+        
+          <!-- <div class="info">
+           
+          <p>user Interface project<br>apps for design students
+          </p>
+            </div> 
+            </section> -->
+        
+        
+            <section class="product">
+                <div>
+                    <img src="images/blog/tennis/2.jpg"alt="俯视图客厅全貌">
+                    <h3>Tennis court</h3>
+                    <p>enjoy alone<br></p>
+                </div>
+        
+                <div>
+                    <img src="images/blog/tennis/3.jpg"alt="设计渲染">
+                    <h3>Daylight hours</h3>
+                    <p>little hot<br></p>
+                </div>
+        
+                <div>
+                    <img src="images/blog/tennis/1.jpg"alt="zui喜欢一昂">
+                    <h3>Sunset hours</h3>
+                    <p>impressive<br></p>
+                </div>
+            </section>
+          <!-- -----------------------  -->
+        </div><h2 id="cat"></h2>  
+        <p style="color:transparent">Programs and ideas still have some shortcomings, I'll continue to improve afterward</p>
+          <h3 id="contact">Cat</h3>
+       
+             <section class="product">
+                 <div>
+                     <img src="images/blog/cat/动画.gif"alt="俯视图客厅全貌">
+                     <h3>My animation
+                    </h3>
+                     <p>share my life~<br></p>
+                 </div>
+         
+                 <div>
+                     <img src="images/blog/cat/3.jpg"alt="设计渲染">
+                     <h3>Lovely  shadow
+                    </h3>
+                     <p>kitty<br></p>
+                 </div>
+         
+                 <div>
+                     <img src="images/blog/cat/4.jpg"alt="zui喜欢一昂">
+                     <h3>Rolling</h3>
+                     <p>innocent<br></p>
+                 </div>
+             </section>
+             <!-- ---------------------- -->
+            </div><h2 id="lego"></h2>  
+            <p style="color:transparent">Programs and ideas still have some shortcomings, I'll continue to improve afterward</p>
+             <h3 id="contact">Lego</h3>
+             <section class="product">
+                 <div>
+                     <img src="images/blog/lego/1.jpg"alt="俯视图客厅全貌">
+                     <h3>My favourite car</h3>
+                     <p>ferrai 488GT3<br></p>
+                 </div>
+         
+                 <div>
+                     <img src="images/blog/lego/2.jpg"alt="设计渲染">
+                     <h3>Collect M4</h3>
+                     <p>bmw m4GT3<br></p>
+                 </div>
+         
+                 <div>
+                     <img src="images/blog/lego/3.jpg"alt="zui喜欢一昂">
+                     <h3>Speed Series</h3>
+                     <p>more...<br></p>
+                 </div>
+             </section>
+             <!-- --------------------  -->
+             <h2 >Show me more~</h2>
+
+             <p>Some photos taken in life.
+            </p>
+           
+             <!-- ---------------------- 照片 -->
+             <section class = body>
+              <div class="container">
+                <!--active 标识被点击的图片 -->
+                <div class="panel active" style="background-image:url(images/blog/7个人摄影/1.JPG)">
+                  <h31>Healing Scenery
+</h31>
+                </div>
+                <div class="panel" style="background-image:url(images/blog/7个人摄影/7.JPG)" >
+                  <h31> </h31>
+                </div>
+                <div class="panel" style="background-image:url(images/blog/7个人摄影/8.JPG)">
+                 
+                </div>
+                <div class="panel" style="background-image:url(images/blog/7个人摄影/10.JPG)">
+                  
+                </div>
+                <div class="panel" style="background-image:url(images/blog/7个人摄影/11.JPG)">
+                  
+                </div>
+              </div>
+              </section>
+              <!-- -------------------  -->
+              <section class = body>
+                <div class="container">
+                  <!--active 标识被点击的图片 -->
+                  <div class="panel active" style="background-image:url(images/blog/7个人摄影/3.JPG)">
+                    <h31>black and white light
+                    </h31>
+                  </div>
+                  <div class="panel" style="background-image:url(images/blog/7个人摄影/4.JPG)" >
+                    <h31> </h31>
+                  </div>
+                  <div class="panel" style="background-image:url(images/blog/7个人摄影/5.JPG)">
+                   
+                  </div>
+                  <div class="panel" style="background-image:url(images/blog/7个人摄影/12.JPG)">
+                    
+                  </div>
+                  <div class="panel" style="background-image:url(images/blog/7个人摄影/9.JPG)">
+                    
+                  </div>
+                </div>
+                </section>
+
+
+
+
+
+
+
+          </section>
+          <script src="zhaopian.js"></script>
+        </script><link rel="stylesheet" href="zhaopian.css">
+
+         
+        
+
+        <!-- <p>my email:925420636@qq.com</p>
+        <p>my phone-number:18868125006</p> -->
+
+
+      </main>
+      <div class="footer">
+        <p>  wangyeshiw kuaile</p>
+       </div>
+       
+
+      <section class="newsletter">
+        <p>This is a message board!</p>
+        <form>
+            <input class="文字栏" placeholder="pleasure to get your message"required>
+            <button id="submit">送出</button>
+        </form>
+    </section>
+
+    <script src="newsletter.js"></script>
+    <script src="./backmusic.js"></script>
+
+</body>
+</html>
