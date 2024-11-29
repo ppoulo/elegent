@@ -4,6 +4,7 @@
 <head>
     <!-- 基础信息 -->
     <meta charset="utf-8">
+   
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <!-- 强制 HTTPS，若不需要可删除，但可能出现问题 -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -13,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#424242"/>
     <meta name="description" content="一个默默无闻的主页">
-    <meta name="keywords" content="Auroraの小栈,个人主页">
-    <meta name="author" content="Aurora">
-    <title>Auroraの主页</title>
+    <meta name="keywords" content="ppouloの小栈,个人主页">
+    <meta name="author" content="ppoulo">
+    <title>ppoulo space</title>
     <!-- jQuery -->
     <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.5.1/jquery.min.js"></script>
     <!-- HarmonyOS Sans -->
@@ -28,7 +29,11 @@
     <link rel="stylesheet" type="text/css" href="./css/mobile.css">
     <link rel="stylesheet" type="text/css" href="./css/loading.css">
     <link rel="stylesheet" type="text/css" href="./css/animation.css">
-    <link rel="icon" href="https://aurora-cdn.wuhobin.top/blog/favicon.png">
+    <!-- <link rel="icon" href="https://aurora-cdn.wuhobin.top/blog/favicon.png"> -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
     <link rel="apple-touch-icon" href="https://aurora-cdn.wuhobin.top/blog/favicon.png">
     <!-- Izitoast -->
     <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css">
@@ -74,8 +79,8 @@
             <div class="inner three"></div>
         </div>
         <div class="loading-word">
-            <p class="loading-title" id="loading-title">Auroraの主页</p>
-            <span id="loading-text">加载中</span>
+            <p class="loading-title" id="loading-title">ppoulo主页</p>
+            <span id="loading-text">loading~</span>
         </div>
     </div>
 </div>
@@ -97,42 +102,42 @@
                     <div class="main-left">
                         <!--Logo-->
                         <div class="main-img">
-                            <img id="logo-img" src="https://aurora-cdn.wuhobin.top/blog/avatar.jpg" alt="img">
+                            <img  src="./img/icon/avata.png" alt="img">
                             <div class="img-title">
-                                <span class="img-title-big" id="logo-text-1">wuhobin</span>
-                                <span class="img-text" id="logo-text-2">.top</span>
+                                <span class="img-title-big" id="logo-text-1">wojunwe</span>
+                                <span class="img-text" id="logo-text-2">.get</span>
                             </div>
                         </div>
                         <!--介绍信息-->
                         <div class="message cards" id="switchmore">
                             <div class="des" id="des">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <div class="des-title"><span id="change">Hello&nbsp;World&nbsp;!</span><br/><span
-                                        id="change1">一个建立于 21 世纪的小站，存活于互联网的边缘</span></div>
+                                <div class="des-title"><span id="change">Hello&nbsp;Bonjour&nbsp;!</span><br/><span
+                                        id="change1">Welcome to ppouloの小栈 space</span></div>
                                 <i class="fa-solid fa-quote-right"></i>
                             </div>
                         </div>
                         <!--社交链接-->
                         <div class="social" id="social">
-                            <a href="https://github.com/wuhobin" class="link" id="github" style="margin-left: 4px"
+                            <!-- <a href="#" class="link" id="github" style="margin-left: 4px"
                                target="_blank">
                                 <i class="fa-brands fa-github"></i>
-                            </a>
+                            </a> -->
                             <a href="https://wpa.qq.com/msgrd?v=3&uin=1289066006&site=qq&menu=yes" class="link"
                                id="qq" target="_blank">
                                 <i class="fa-brands fa-qq"></i>
                             </a>
-                            <a href="mailto:1289066006@qq.com" class="link" id="email">
+                            <a href="mailto:925420636@qq.com" class="link" id="email">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>
-                            <a href="https://space.bilibili.com/495003013" class="link" id="bilibili"
+                            <a href="https://space.bilibili.com/516441173" class="link" id="bilibili"
                                target="_blank">
                                 <i class="fa-brands fa-bilibili"></i>
                             </a>
                             <a href="https://www.facebook.com/" class="link" id="facebook" target="_blank">
                                 <i class="fa-brands fa-facebook"></i>
                             </a>
-                            <a id="link-text">通过这里联系我</a>
+                            <a id="link-text">contact me here</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +155,7 @@
                                     <!--切换音乐-->
                                     <div class="open-music fixed-top" id="open-music">
                                         <i class="fa-solid fa-compact-disc"></i>
-                                        <span>&nbsp;打开音乐播放器</span>
+                                        <span>&nbsp;open music-player</span>
                                     </div>
                                     <!--切换音乐结束-->
                                     <div class="hitokoto-all">
@@ -197,8 +202,8 @@
                                             class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
                                     </div>
                                     <div class="weather">
-                                        <span id="city_text">天气</span>&nbsp;
-                                        <span id="wea_text">加载失败</span>&nbsp;
+                                        <span id="city_text">weather</span>&nbsp;
+                                        <span id="wea_text">loading failed</span>&nbsp;
                                         <span id="tem_text"></span>
                                         <span id="win_text">次数</span>
                                         <span id="win_speed">超限</span>
@@ -209,39 +214,40 @@
                         <!--分隔线-->
                         <div class="line">
                             <i class="fa-solid fa-link"></i>
-                            <span class="line-text">网站列表</span>
+                            <span class="line-text">The list</span>
                         </div>
                         <!--网站链接-->
                         <div class="link">
                             <!--第一组-->
                             <div class="row">
                                 <div class="col">
-                                    <a id="link-url-1" href="https://blog.bywind.xyz/" target="_blank">
+                                    <a  href="hindex.html" >
+                                       
                                         <div class="link-card cards">
                                             <i id="link-icon-1" class="fa-solid fa-blog"></i>
-                                            <span class="link-name" id="link-name-1">博客</span>
+                                            <span class="link-name" id="link-name-1">open here</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col 2">
-                                    <a id="link-url-2" href="https://tongji.baidu.com/" target="_blank">
+                                    <a id="link-url-2" href="#" target="_blank">
                                         <div class="link-card cards">
                                             <i id="link-icon-2" class="fa-solid fa-cloud"></i>
-                                            <span class="link-name" id="link-name-2">统计</span>
+                                            <span class="link-name" id="link-name-2">none</span>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a id="link-url-3" href="https://blog.bywind.xyz/music/" target="_blank">
+                                    <a id="link-url-3" href="#" target="_blank">
                                         <div class="link-card cards">
                                             <i id="link-icon-3" class="fa-solid fa-music"></i>
-                                            <span class="link-name" id="link-name-3">音乐</span>
+                                            <span class="link-name" id="link-name-3">music</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <!--第二组-->
-                            <div class="row" style="margin-top: 1.5rem;">
+                            <!-- <div class="row" style="margin-top: 1.5rem;">
                                 <div class="col">
                                     <a id="link-url-4" href="https://www.bywind.xyz/" target="_blank">
                                         <div class="link-card cards">
@@ -265,7 +271,7 @@
                                             <span class="link-name" id="link-name-6">实验室</span>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -290,84 +296,38 @@
                 </div>
                 <div class="date" id="date">
                     <div class="item" id="dayProgress">
-                        <div class="date-text" style="margin-top: 0rem;">今日已经度过了&nbsp;<span></span>&nbsp;小时
+                        <div class="date-text" style="margin-top: 0rem;">Today has spent&nbsp;<span></span>&nbsp;hours
                         </div>
                         <div class="progress">
                             <div class="progress-bar"></div>
                         </div>
                     </div>
                     <div class="item" id="weekProgress">
-                        <div class="date-text">本周已经度过了&nbsp;<span></span>&nbsp;天</div>
+                        <div class="date-text">The week has spent&nbsp;<span></span>&nbsp;days</div>
                         <div class="progress">
                             <div class="progress-bar"></div>
                         </div>
                     </div>
                     <div class="item" id="monthProgress">
-                        <div class="date-text">本月已经度过了&nbsp;<span></span>&nbsp;天</div>
+                        <div class="date-text">The month has spent&nbsp;<span></span>&nbsp;days</div>
                         <div class="progress">
                             <div class="progress-bar"></div>
                         </div>
                     </div>
                     <div class="item" id="yearProgress">
-                        <div class="date-text">今年已经度过了&nbsp;<span></span>&nbsp;个月</div>
+                        <div class="date-text">The year has spent&nbsp;<span></span>&nbsp;months</div>
                         <div class="progress">
                             <div class="progress-bar"></div>
                         </div>
                     </div>
                 </div>
-                <div class="line">
+                <!-- <div class="line">
                     <i class="fa-solid fa-angle-left"></i>
                     <span class="line-text">杂七杂八</span>
                     <i class="fa-solid fa-angle-right"></i>
-                </div>
+                </div> -->
                 <!--网站链接-->
-                <div class="row">
-                    <div class="col">
-                        <a href="#" target="_blank">
-                            <div class="link-card cards">
-                                <span class="link-name">站点监测</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col 2">
-                        <a href="https://blog.bywind.xyz/music/" target="_blank">
-                            <div class="link-card cards">
-                                <span class="link-name">播放器</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#" target="_blank">
-                            <div class="link-card cards">
-                                <span class="link-name">编辑器</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 1.5rem;">
-                    <div class="col">
-                        <a href="https://blog.bywind.xyz//gallery/" target="_blank">
-                            <div class="link-card cards">
-                                <span class="link-name">时光相册</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col 2">
-                        <a href="#" target="_blank">
-                            <div class="link-card cards">
-                                <span class="link-name">文件库</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a id="openmore">
-                            <div class="link-card cards">
-                                <span class="link-name">更多</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+              
             <!--更多页面-->
             <div class="box" id="box" style="display: none">
                 <div class="box-wrapper">
@@ -468,7 +428,7 @@
                     <!--Aplayer-->
                     <div class="box-right">
                         <div id="aplayer">
-                            <span>音乐播放器加载失败</span>
+                            <span>music player loading failed~</span>
                         </div>
                     </div>
                 </div>
@@ -476,20 +436,16 @@
         </div>
     </main>
     <!-- 版权信息 -->
-    <footer id="footer" class="fixed-bottom footer">
+    <!-- <footer id="footer" class="fixed-bottom footer">
         <div class="power">
-                <span id="power">Copyright&nbsp;&copy;
+                <span id="power">ppoulo&nbsp;&copy;
                     <script>
                         document.write((new Date()).getFullYear());
                     </script>
-                    <a href="https://blog.bywind.xyz" id="power-text">Aurora</a>
+                    
                 </span>
-            <!-- 以下信息请不要修改哦 -->
-            <!--                <span id="made">&amp;&nbsp;Made&nbsp;by&nbsp;<a href="https://github.com/imsyy/home"-->
-            <!--                        target="_blank">imsyy</a></span>-->
-            <!-- 站点备案 -->
-            <a href="https://beian.miit.gov.cn" id="beian" target="_blank">&amp;&nbsp;鄂ICP备20006685号</a>
-        </div>
+         
+        </div> -->
         <!-- 歌词显示 -->
         <div id="lrc"></div>
     </footer>

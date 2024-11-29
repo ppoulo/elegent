@@ -1,9 +1,3 @@
-/*
-作者: imsyy
-主页：https://www.imsyy.top/
-GitHub：https://github.com/imsyy/home
-版权所有，请勿删除
-*/
 
 /* 自定义配置 */
 /* 尚未完善 */
@@ -93,7 +87,7 @@ function setBgImgInit() {
 
     switch (bg_img["type"]) {
         case "1":
-            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 10)}.webp`) //随机默认壁纸
+            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 11)}.webp`) //随机默认壁纸
             break;
         case "2":
             $('#bg').attr('src', bg_img_preinstall[2]); //必应每日

@@ -1,9 +1,4 @@
-/*
-作者: imsyy
-主页：https://www.imsyy.top/
-GitHub：https://github.com/imsyy/home
-版权所有，请勿删除
-*/
+
 
 //弹窗样式
 iziToast.settings({
@@ -57,7 +52,7 @@ window.addEventListener('load', function () {
             timeout: 2500,
             icon: false,
             title: hello,
-            message: '欢迎来到我的主页'
+            message: 'Welcome to my space '
         });
     }, 800);
 
@@ -83,7 +78,7 @@ window.addEventListener('load', function () {
 }, false)
 
 setTimeout(function () {
-    $('#loading-text').html("字体及文件加载可能需要一定时间")
+    $('#loading-text').html("adding needs some time...")
 }, 3000);
 
 // 新春灯笼 （ 需要时可取消注释 ）
@@ -128,7 +123,7 @@ $('#hitokoto').click(function () {
         iziToast.show({
             timeout: 1000,
             icon: "fa-solid fa-circle-exclamation",
-            message: '你点太快了吧'
+            message: 'point too fast'
         });
     }
 });
@@ -180,13 +175,13 @@ $('#upWeather').click(function () {
         iziToast.show({
             timeout: 2000,
             icon: "fa-solid fa-cloud-sun",
-            message: '实时天气已更新'
+            message: 'The weather has been updated.'
         });
     } else {
         iziToast.show({
             timeout: 1000,
             icon: "fa-solid fa-circle-exclamation",
-            message: '请稍后再更新哦'
+            message: 'Please update later~'
         });
     }
 });
@@ -243,27 +238,27 @@ $("#social").mouseover(function () {
 $("#github").mouseover(function () {
     $("#link-text").html("去 Github 看看");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#link-text").html("contact me here");
 });
 $("#qq").mouseover(function () {
-    $("#link-text").html("有什么事吗");
+    $("#link-text").html("anything else");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#link-text").html("contact me here");
 });
 $("#email").mouseover(function () {
     $("#link-text").html("来封 Email");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#link-text").html("contact me here");
 });
 $("#bilibili").mouseover(function () {
-    $("#link-text").html("来 B 站看看 ~");
+    $("#link-text").html("my bilibili ~");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#link-text").html("contact me here");
 });
 $("#telegram").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("you got it ~");
 }).mouseout(function () {
-    $("#link-text").html("通过这里联系我");
+    $("#link-text").html("contact me here");
 });
 
 //自动变灰
@@ -298,11 +293,11 @@ $('#switchmore').on('click', function () {
     if (shoemore && $(document).width() >= 990) {
         $('#container').attr('class', 'container mores');
         $("#change").html("Oops&nbsp;!");
-        $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
+        $("#change1").html("wow,bingo");
     } else {
         $('#container').attr('class', 'container');
         $("#change").html("Hello&nbsp;World&nbsp;!");
-        $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+        $("#change1").html("a letter");
     }
 });
 
@@ -351,7 +346,7 @@ window.addEventListener('load', function () {
             //移动端隐藏更多页面
             $('#container').attr('class', 'container');
             $("#change").html("Hello&nbsp;World&nbsp;!");
-            $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+            $("#change1").html("a one person website");
 
             //移动端隐藏弹窗页面
             $('#box').css("display", "none");
@@ -384,7 +379,7 @@ document.oncontextmenu = function () {
     iziToast.show({
         timeout: 2000,
         icon: "fa-solid fa-circle-exclamation",
-        message: '为了浏览体验，本站禁用右键'
+        message: 'right-click disabled on website'
     });
     return false;
 }

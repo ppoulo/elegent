@@ -1,16 +1,13 @@
 {
-    "title": "Auroraの主页",
+    "title": "ppouloの主页",
     "description": "一个默默无闻的主页",
-    "keywords": "Aurora,个人主页",
-    "author": "Aurora",
+    "keywords": "ppoulo,个人主页",
+    "author": "ppoulo",
     "logo_img": "./img/icon/avatar.jpg",
     "logo_text_1": "wuhobin",
     "logo_text_2": "top",
-    "github": "wuhobin",
-    "qq": "1289066006",
-    "email": "1289066006@qq.com",
-    "bilibili": "495003013",
-    "facebook": "bottom_user",
+   
+    
     "link_1": [
         "http://blog.wuhobin.top/",
         "fa-solid fa-blog",
@@ -36,11 +33,8 @@
         "fa-solid fa-flask",
         "开发中..."
     ],
-    "link_6": [
-        "http://www.wuhobin.top/",
-        "fa-solid fa-flask",
-        "敬请期待..."
-    ],
-    "Copyright_text": "Aurora",
-    "beian": "鄂ICP备20006685号"
+   
+    
+    "Copyright_text": "Aurora"
+   
 }
